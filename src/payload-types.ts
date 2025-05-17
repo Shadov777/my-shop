@@ -69,8 +69,8 @@ export interface Config {
   collections: {
     users: User;
     media: Media;
-    wears: Wear;
     Orders: Order;
+    wears: Wear;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
@@ -79,8 +79,8 @@ export interface Config {
   collectionsSelect: {
     users: UsersSelect<false> | UsersSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
-    wears: WearsSelect<false> | WearsSelect<true>;
     Orders: OrdersSelect<false> | OrdersSelect<true>;
+    wears: WearsSelect<false> | WearsSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
     'payload-migrations': PayloadMigrationsSelect<false> | PayloadMigrationsSelect<true>;
@@ -155,24 +155,6 @@ export interface Media {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "wears".
- */
-export interface Wear {
-  id: number;
-  name: string;
-  price: number;
-  category: 'Outerwear' | 'Shirts' | 'Pants' | 'Accessories';
-  image: number | Media;
-  color: string;
-  sizes: {
-    size?: string | null;
-    id?: string | null;
-  }[];
-  updatedAt: string;
-  createdAt: string;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "Orders".
  */
 export interface Order {
@@ -196,6 +178,24 @@ export interface Order {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "wears".
+ */
+export interface Wear {
+  id: number;
+  name: string;
+  price: number;
+  category: 'Outerwear' | 'Shirts' | 'Pants' | 'Accessories';
+  image: number | Media;
+  color: string;
+  sizes: {
+    size?: string | null;
+    id?: string | null;
+  }[];
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-locked-documents".
  */
 export interface PayloadLockedDocument {
@@ -210,12 +210,12 @@ export interface PayloadLockedDocument {
         value: number | Media;
       } | null)
     | ({
-        relationTo: 'wears';
-        value: number | Wear;
-      } | null)
-    | ({
         relationTo: 'Orders';
         value: number | Order;
+      } | null)
+    | ({
+        relationTo: 'wears';
+        value: number | Wear;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -294,25 +294,6 @@ export interface MediaSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "wears_select".
- */
-export interface WearsSelect<T extends boolean = true> {
-  name?: T;
-  price?: T;
-  category?: T;
-  image?: T;
-  color?: T;
-  sizes?:
-    | T
-    | {
-        size?: T;
-        id?: T;
-      };
-  updatedAt?: T;
-  createdAt?: T;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "Orders_select".
  */
 export interface OrdersSelect<T extends boolean = true> {
@@ -330,6 +311,25 @@ export interface OrdersSelect<T extends boolean = true> {
               quantity?: T;
               size?: T;
             };
+        id?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "wears_select".
+ */
+export interface WearsSelect<T extends boolean = true> {
+  name?: T;
+  price?: T;
+  category?: T;
+  image?: T;
+  color?: T;
+  sizes?:
+    | T
+    | {
+        size?: T;
         id?: T;
       };
   updatedAt?: T;

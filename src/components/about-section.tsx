@@ -1,8 +1,13 @@
-"use client"
+'use client'
 
-import { motion } from "framer-motion"
-import Image from "next/image"
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+import { motion } from 'framer-motion'
+import Image from 'next/image'
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from '@/components/ui/accordion'
 
 export function AboutSection() {
   return (
@@ -28,13 +33,14 @@ export function AboutSection() {
                 <AccordionTrigger className="text-white">Our Story</AccordionTrigger>
                 <AccordionContent className="text-zinc-400">
                   <p>
-                    Founded in 2018, URBAN THREADS began as a small passion project between friends who shared a love
-                    for streetwear culture. What started in a garage with just a few designs has grown into a global
-                    brand that celebrates urban creativity and self-expression.
+                    Founded in 2018, URBAN THREADS began as a small passion project between friends
+                    who shared a love for streetwear culture. What started in a garage with just a
+                    few designs has grown into a global brand that celebrates urban creativity and
+                    self-expression.
                   </p>
                   <p className="mt-2">
-                    Our journey has been defined by authenticity, quality, and a commitment to pushing boundaries in
-                    streetwear design.
+                    Our journey has been defined by authenticity, quality, and a commitment to
+                    pushing boundaries in streetwear design.
                   </p>
                 </AccordionContent>
               </AccordionItem>
@@ -43,13 +49,14 @@ export function AboutSection() {
                 <AccordionTrigger className="text-white">Our Mission</AccordionTrigger>
                 <AccordionContent className="text-zinc-400">
                   <p>
-                    At URBAN THREADS, our mission is to create streetwear that empowers individuals to express their
-                    unique identity. We believe clothing is more than fabric—it's a statement, a form of
-                    self-expression, and a way to connect with like-minded communities.
+                    At URBAN THREADS, our mission is to create streetwear that empowers individuals
+                    to express their unique identity. We believe clothing is more than fabric—it s a
+                    statement, a form of self-expression, and a way to connect with like-minded
+                    communities.
                   </p>
                   <p className="mt-2">
-                    We're committed to creating limited edition pieces that stand out, using premium materials and
-                    innovative designs that push the boundaries of streetwear.
+                    We re committed to creating limited edition pieces that stand out, using premium
+                    materials and innovative designs that push the boundaries of streetwear.
                   </p>
                 </AccordionContent>
               </AccordionItem>
@@ -58,7 +65,8 @@ export function AboutSection() {
                 <AccordionTrigger className="text-white">Sustainability</AccordionTrigger>
                 <AccordionContent className="text-zinc-400">
                   <p>
-                    We're committed to reducing our environmental footprint. Our sustainability initiatives include:
+                    We re committed to reducing our environmental footprint. Our sustainability
+                    initiatives include:
                   </p>
                   <ul className="list-disc pl-5 mt-2 space-y-1">
                     <li>Using organic and recycled materials whenever possible</li>
@@ -74,13 +82,14 @@ export function AboutSection() {
                 <AccordionTrigger className="text-white">Design Philosophy</AccordionTrigger>
                 <AccordionContent className="text-zinc-400">
                   <p>
-                    Our design approach blends urban culture, contemporary art, and streetwear heritage. Each collection
-                    tells a story and reflects current cultural movements while maintaining a timeless appeal.
+                    Our design approach blends urban culture, contemporary art, and streetwear
+                    heritage. Each collection tells a story and reflects current cultural movements
+                    while maintaining a timeless appeal.
                   </p>
                   <p className="mt-2">
-                    We collaborate with artists, musicians, and cultural icons to create unique pieces that bridge the
-                    gap between fashion and art. Every detail matters—from custom hardware to specialized printing
-                    techniques.
+                    We collaborate with artists, musicians, and cultural icons to create unique
+                    pieces that bridge the gap between fashion and art. Every detail matters—from
+                    custom hardware to specialized printing techniques.
                   </p>
                 </AccordionContent>
               </AccordionItem>
@@ -89,12 +98,13 @@ export function AboutSection() {
                 <AccordionTrigger className="text-white">Community</AccordionTrigger>
                 <AccordionContent className="text-zinc-400">
                   <p>
-                    URBAN THREADS is more than a clothing brand—it's a community. We support local artists, sponsor
-                    skateparks, and host events that bring together people who share our passion for streetwear culture.
+                    URBAN THREADS is more than a clothing brand—its a community. We support local
+                    artists, sponsor skateparks, and host events that bring together people who
+                    share our passion for streetwear culture.
                   </p>
                   <p className="mt-2">
-                    Through our UT Community Initiative, we donate a portion of our profits to programs that provide
-                    creative outlets for youth in underserved communities.
+                    Through our UT Community Initiative, we donate a portion of our profits to
+                    programs that provide creative outlets for youth in underserved communities.
                   </p>
                 </AccordionContent>
               </AccordionItem>
@@ -121,4 +131,3 @@ export function AboutSection() {
     </section>
   )
 }
-

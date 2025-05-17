@@ -1,3 +1,4 @@
+// storage-adapter-import-placeholder
 import { vercelPostgresAdapter } from '@payloadcms/db-vercel-postgres'
 import { payloadCloudPlugin } from '@payloadcms/payload-cloud'
 import { lexicalEditor } from '@payloadcms/richtext-lexical'
@@ -7,9 +8,9 @@ import { fileURLToPath } from 'url'
 import sharp from 'sharp'
 
 import { Users } from './collections/Users'
-import { Wears } from './collections/Wears'
 import { Media } from './collections/Media'
 import { Orders } from './collections/Orders'
+import { Wears } from './collections/Wears'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -21,7 +22,7 @@ export default buildConfig({
       baseDir: path.resolve(dirname),
     },
   },
-  collections: [Users, Media, Wears, Orders],
+  collections: [Users, Media, Orders, Wears],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: {
@@ -29,11 +30,12 @@ export default buildConfig({
   },
   db: vercelPostgresAdapter({
     pool: {
-      connectionString:
-        process.env.POSTGRES_URL ||
-        'postgresql://postgres:[YOUR-PASSWORD]@db.vxgnawvckwcozlcemwij.supabase.co:5432/postgres',
+      connectionString: process.env.POSTGRES_URL || '',
     },
   }),
   sharp,
-  plugins: [payloadCloudPlugin()],
+  plugins: [
+    payloadCloudPlugin(),
+    // storage-adapter-placeholder
+  ],
 })
