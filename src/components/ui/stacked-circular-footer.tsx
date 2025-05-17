@@ -1,6 +1,5 @@
 import { Icons } from '@/components/ui/icons'
 import { Button } from '@/components/ui/button'
-
 import { Facebook, Instagram, Linkedin, Twitter } from 'lucide-react'
 
 function StackedCircularFooter() {
@@ -9,10 +8,10 @@ function StackedCircularFooter() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col items-center">
           <div className="mb-8 rounded-full bg-primary/10 p-8">
-            <Icons.logo size={24} color="currentColor" />
+            <Icons.logo className="h-6 w-6" />
           </div>
           <nav className="mb-8 flex flex-wrap justify-center gap-6">
-            <a href="#home" className="hover:text-primary">
+            <a href="#" className="hover:text-primary">
               Home
             </a>
             <a href="#" className="hover:text-primary">
@@ -46,7 +45,6 @@ function StackedCircularFooter() {
               <span className="sr-only">LinkedIn</span>
             </Button>
           </div>
-
           <div className="text-center">
             <p className="text-sm text-zinc-400">
               © {new Date().getFullYear()} URBAN THREADS. All rights reserved.
