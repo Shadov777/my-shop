@@ -1,20 +1,20 @@
-import { Hero } from "@/components/ui/hero"
+import { Hero } from '@/components/ui/hero'
 
 export function HeroSection() {
   return (
     <Hero
-      title="URBAN THREADS"
-      subtitle="Exclusive streetwear drops. Limited editions. Authentic style."
+      title="Tsw Store"
+      subtitle="Najlepszej jakości odzież i akcesoria oraz najlepsze ceny. Sprawdź naszą ofertę i przekonaj się sam!"
       actions={[
         {
-          label: "Shop Collection",
-          href: "#products",
-          variant: "default",
+          label: 'Nasze Produkty',
+          href: '#products',
+          variant: 'default',
         },
         {
-          label: "About Us",
-          href: "#about",
-          variant: "outline",
+          label: 'O Nas',
+          href: '#about',
+          variant: 'outline',
         },
       ]}
       titleClassName="text-5xl md:text-6xl font-extrabold text-white"
@@ -25,4 +25,3 @@ export function HeroSection() {
     />
   )
 }
-

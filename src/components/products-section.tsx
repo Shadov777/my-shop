@@ -1,24 +1,24 @@
-"use client"
+'use client'
 
-import { useState, useRef, useEffect } from "react"
-import { InteractiveCheckout } from "@/components/ui/interactive-checkout"
-import { motion, AnimatePresence } from "framer-motion"
-import { Search, Filter } from "lucide-react"
-import { Input } from "@/components/ui/input"
-import { Button } from "@/components/ui/button"
-import { cn } from "@/lib/utils"
-import type { Wear } from "@/payload-types"
+import { useState, useRef, useEffect } from 'react'
+import { InteractiveCheckout } from '@/components/ui/interactive-checkout'
+import { motion, AnimatePresence } from 'framer-motion'
+import { Search, Filter } from 'lucide-react'
+import { Input } from '@/components/ui/input'
+import { Button } from '@/components/ui/button'
+import { cn } from '@/lib/utils'
+import type { Wear } from '@/payload-types'
 
 type ProductsSectionProps = {
   wears?: Wear[]
 }
 
 export function ProductsSection({ wears = [] }: ProductsSectionProps) {
-  const [searchQuery, setSearchQuery] = useState("")
+  const [searchQuery, setSearchQuery] = useState('')
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null)
   const [showCategoryFilter, setShowCategoryFilter] = useState(false)
   const filterRef = useRef<HTMLDivElement>(null)
-  const [filterHeight, setFilterHeight] = useState<number | "auto">("auto")
+  const [filterHeight, setFilterHeight] = useState<number | 'auto'>('auto')
 
   // Extract unique categories from wears, safely handling undefined values
   const categories = Array.from(
@@ -46,7 +46,7 @@ export function ProductsSection({ wears = [] }: ProductsSectionProps) {
 
       const searchLower = searchQuery.toLowerCase()
       const matchesSearch =
-        searchQuery === "" ||
+        searchQuery === '' ||
         product.name.toLowerCase().includes(searchLower) ||
         product.category.toLowerCase().includes(searchLower) ||
         product.color.toLowerCase().includes(searchLower)
@@ -61,7 +61,7 @@ export function ProductsSection({ wears = [] }: ProductsSectionProps) {
   }
 
   const clearFilters = () => {
-    setSearchQuery("")
+    setSearchQuery('')
     setSelectedCategory(null)
   }
 
@@ -71,15 +71,15 @@ export function ProductsSection({ wears = [] }: ProductsSectionProps) {
       height: 0,
       opacity: 0,
       marginBottom: 0,
-      overflow: "hidden",
+      overflow: 'hidden',
     },
     visible: {
       height: filterHeight,
       opacity: 1,
       marginBottom: 16,
-      overflow: "hidden",
+      overflow: 'hidden',
       transition: {
-        height: { type: "spring", stiffness: 300, damping: 30 },
+        height: { type: 'spring', stiffness: 300, damping: 30 },
         opacity: { duration: 0.2, delay: 0.1 },
       },
     },
@@ -87,9 +87,9 @@ export function ProductsSection({ wears = [] }: ProductsSectionProps) {
       height: 0,
       opacity: 0,
       marginBottom: 0,
-      overflow: "hidden",
+      overflow: 'hidden',
       transition: {
-        height: { type: "spring", stiffness: 300, damping: 30 },
+        height: { type: 'spring', stiffness: 300, damping: 30 },
         opacity: { duration: 0.2 },
       },
     },
@@ -98,36 +98,43 @@ export function ProductsSection({ wears = [] }: ProductsSectionProps) {
   // Custom scrollbar styles
   const scrollbarStyles = `
     .custom-scrollbar::-webkit-scrollbar {
-      width: 8px;
+      width: 12px !important;
+      display: block !important;
     }
     
     .custom-scrollbar::-webkit-scrollbar-track {
-      background: rgba(24, 24, 27, 0.6);
-      border-radius: 12px;
-      margin: 4px;
+      background: rgba(24, 24, 27, 0.8) !important;
+      border-radius: 12px !important;
+      margin: 4px !important;
     }
     
     .custom-scrollbar::-webkit-scrollbar-thumb {
-      background: rgba(113, 113, 122, 0.4);
-      border-radius: 12px;
-      border: 2px solid rgba(24, 24, 27, 0.6);
-      transition: all 0.3s ease;
+      background: rgba(147, 51, 234, 0.8) !important;
+      border-radius: 12px !important;
+      border: 2px solid rgba(24, 24, 27, 0.8) !important;
+      transition: all 0.3s ease !important;
     }
     
     .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-      background: rgba(147, 51, 234, 0.6);
+      background: rgba(147, 51, 234, 1) !important;
     }
     
     .custom-scrollbar {
-      scrollbar-width: thin;
-      scrollbar-color: rgba(113, 113, 122, 0.4) rgba(24, 24, 27, 0.6);
+      scrollbar-width: auto !important;
+      scrollbar-color: rgba(147, 51, 234, 0.8) rgba(24, 24, 27, 0.8) !important;
     }
 
     .products-container {
-      max-height: 70vh;
-      overflow-y: auto;
-      padding-right: 10px;
-      margin-right: -2px;
+      max-height: 300px !important;
+      overflow-y: scroll !important;
+      padding-right: 15px !important;
+      border: 1px solid rgba(147, 51, 234, 0.3) !important;
+      border-radius: 8px !important;
+    }
+
+    /* Styl dla wpisów, aby wymusić wysokość */
+    .products-container > div > div:first-child > div {
+      min-height: 80px !important;
     }
   `
 
@@ -166,8 +173,8 @@ export function ProductsSection({ wears = [] }: ProductsSectionProps) {
                 <Button
                   variant="outline"
                   className={cn(
-                    "flex items-center gap-2 md:w-auto",
-                    showCategoryFilter && "border-primary text-primary",
+                    'flex items-center gap-2 md:w-auto',
+                    showCategoryFilter && 'border-primary text-primary',
                   )}
                   onClick={() => setShowCategoryFilter(!showCategoryFilter)}
                 >
@@ -177,7 +184,11 @@ export function ProductsSection({ wears = [] }: ProductsSectionProps) {
               )}
 
               {(selectedCategory || searchQuery) && (
-                <Button variant="ghost" className="text-zinc-400 hover:text-white md:w-auto" onClick={clearFilters}>
+                <Button
+                  variant="ghost"
+                  className="text-zinc-400 hover:text-white md:w-auto"
+                  onClick={clearFilters}
+                >
                   Clear Filters
                 </Button>
               )}
@@ -202,10 +213,10 @@ export function ProductsSection({ wears = [] }: ProductsSectionProps) {
                         transition={{ duration: 0.2 }}
                       >
                         <Button
-                          variant={selectedCategory === category ? "default" : "outline"}
+                          variant={selectedCategory === category ? 'default' : 'outline'}
                           size="sm"
                           onClick={() => handleCategorySelect(category)}
-                          className={selectedCategory === category ? "bg-primary" : ""}
+                          className={selectedCategory === category ? 'bg-primary' : ''}
                         >
                           {category}
                         </Button>
@@ -231,6 +242,13 @@ export function ProductsSection({ wears = [] }: ProductsSectionProps) {
           ) : (
             <div className="products-container custom-scrollbar">
               <InteractiveCheckout products={filteredProducts} />
+              {filteredProducts.length > 5 && (
+                <div className="text-center mt-2">
+                  <p className="text-zinc-400 text-sm">
+                    Showing all {filteredProducts.length} products
+                  </p>
+                </div>
+              )}
             </div>
           )}
         </div>

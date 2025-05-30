@@ -20,9 +20,9 @@ export function AboutSection() {
         className="max-w-7xl mx-auto"
       >
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">About Us</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">O Nas</h2>
           <p className="text-zinc-400 max-w-2xl mx-auto mb-8">
-            Learn more about our brand, our mission, and what makes URBAN THREADS different.
+            Dowiedz się więcej o swojej marce, naszej misji i tym, co wyróżnia Tsw Store.
           </p>
         </div>
 
@@ -30,81 +30,59 @@ export function AboutSection() {
           <div className="order-2 md:order-1">
             <Accordion type="single" collapsible className="w-full">
               <AccordionItem value="item-1">
-                <AccordionTrigger className="text-white">Our Story</AccordionTrigger>
+                <AccordionTrigger className="text-white">O Sklepie</AccordionTrigger>
                 <AccordionContent className="text-zinc-400">
                   <p>
-                    Founded in 2018, URBAN THREADS began as a small passion project between friends
-                    who shared a love for streetwear culture. What started in a garage with just a
-                    few designs has grown into a global brand that celebrates urban creativity and
-                    self-expression.
-                  </p>
-                  <p className="mt-2">
-                    Our journey has been defined by authenticity, quality, and a commitment to
-                    pushing boundaries in streetwear design.
+                    Od ponad 2 lat z powodzeniem realizujemy zamówienia na nasze produkty, nie mając
+                    nigdy żadnych problemów z jakością czy obsługą. Dzięki zaufaniu naszych klientów
+                    postanowiliśmy stworzyć tę stronę, aby jeszcze bardziej ułatwić i przyspieszyć
+                    proces zamawiania. Teraz wszystkie nasze produkty są dostępne w jednym miejscu,
+                    a zakupy stają się wygodne, szybkie i bezproblemowe. Zapraszamy do korzystania!
                   </p>
                 </AccordionContent>
               </AccordionItem>
 
               <AccordionItem value="item-2">
-                <AccordionTrigger className="text-white">Our Mission</AccordionTrigger>
+                <AccordionTrigger className="text-white">Dlaczego My?</AccordionTrigger>
                 <AccordionContent className="text-zinc-400">
-                  <p>
-                    At URBAN THREADS, our mission is to create streetwear that empowers individuals
-                    to express their unique identity. We believe clothing is more than fabric—it s a
-                    statement, a form of self-expression, and a way to connect with like-minded
-                    communities.
-                  </p>
-                  <p className="mt-2">
-                    We re committed to creating limited edition pieces that stand out, using premium
-                    materials and innovative designs that push the boundaries of streetwear.
-                  </p>
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem value="item-3">
-                <AccordionTrigger className="text-white">Sustainability</AccordionTrigger>
-                <AccordionContent className="text-zinc-400">
-                  <p>
-                    We re committed to reducing our environmental footprint. Our sustainability
-                    initiatives include:
-                  </p>
+                  <p>Dzięki nam otrzymasz:</p>
                   <ul className="list-disc pl-5 mt-2 space-y-1">
-                    <li>Using organic and recycled materials whenever possible</li>
-                    <li>Ethical manufacturing practices and fair wages</li>
-                    <li>Minimal waste packaging made from recycled materials</li>
-                    <li>Limited production runs to reduce excess inventory</li>
-                    <li>Carbon-neutral shipping options</li>
+                    <li>
+                      Najlepszej jakości produkty. Korzystamy z najepszych jakosciowo produktów oraz
+                      mamy swoich producentów
+                    </li>
+                    <li>Najlepsza jakość usług i bardzo szybki kontakt z klientem</li>
+                    <li>Najszybszy czas dostawy</li>
+                    <li>
+                      Nie musisz sie martwić że przyjdzie ci list celny bo cała odpowiedzialność
+                      bierzemy na siebie
+                    </li>
                   </ul>
                 </AccordionContent>
               </AccordionItem>
 
-              <AccordionItem value="item-4">
-                <AccordionTrigger className="text-white">Design Philosophy</AccordionTrigger>
+              <AccordionItem value="item-3">
+                <AccordionTrigger className="text-white">Dostawy</AccordionTrigger>
                 <AccordionContent className="text-zinc-400">
                   <p>
-                    Our design approach blends urban culture, contemporary art, and streetwear
-                    heritage. Each collection tells a story and reflects current cultural movements
-                    while maintaining a timeless appeal.
-                  </p>
-                  <p className="mt-2">
-                    We collaborate with artists, musicians, and cultural icons to create unique
-                    pieces that bridge the gap between fashion and art. Every detail matters—from
-                    custom hardware to specialized printing techniques.
+                    Dbamy o to, aby Twoje zamówienie dotarło do Ciebie szybko i bezpiecznie.
+                    Standardowy czas realizacji dostawy od momentu złożenia zamówienia wynosi około
+                    14 dni. Dokładamy wszelkich starań, aby przesyłka dotarła na czas, a Ty mógł
+                    cieszyć się naszymi produktami bez zbędnych opóźnień.
                   </p>
                 </AccordionContent>
               </AccordionItem>
 
-              <AccordionItem value="item-5">
-                <AccordionTrigger className="text-white">Community</AccordionTrigger>
+              <AccordionItem value="item-4">
+                <AccordionTrigger className="text-white">Klienci</AccordionTrigger>
                 <AccordionContent className="text-zinc-400">
                   <p>
-                    URBAN THREADS is more than a clothing brand—its a community. We support local
-                    artists, sponsor skateparks, and host events that bring together people who
-                    share our passion for streetwear culture.
+                    Mamy na swoim koncie wiele zrealizowanych zamówień oraz szerokie grono
+                    zadowolonych klientów, którzy chętnie do nas wracają. Każde zlecenie traktujemy
+                    indywidualnie, dbając o najwyższą jakość usług i satysfakcję naszych odbiorców.
                   </p>
                   <p className="mt-2">
-                    Through our UT Community Initiative, we donate a portion of our profits to
-                    programs that provide creative outlets for youth in underserved communities.
+                    Dołącz do grona naszych klientów i przekonaj się, dlaczego warto nam zaufać!
                   </p>
                 </AccordionContent>
               </AccordionItem>
@@ -116,7 +94,7 @@ export function AboutSection() {
               <div className="absolute -inset-4 rounded-xl bg-gradient-to-r from-primary/20 to-purple-500/20 blur-xl opacity-50"></div>
               <div className="relative aspect-square overflow-hidden rounded-xl">
                 <Image
-                  src="/placeholder.svg?height=600&width=600"
+                  src="333.svg"
                   alt="Urban Threads team"
                   width={600}
                   height={600}
