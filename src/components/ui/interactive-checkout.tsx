@@ -21,6 +21,7 @@ export interface CartItem extends Omit<Wear, 'updatedAt' | 'createdAt'> {
 
 interface InteractiveCheckoutProps {
   products?: Wear[]
+  customProductsContainer?: string
 }
 
 export interface CheckoutFormData {
@@ -329,7 +330,7 @@ function CheckoutModal({
   )
 }
 
-function InteractiveCheckout({ products }: InteractiveCheckoutProps) {
+function InteractiveCheckout({ products, customProductsContainer }: InteractiveCheckoutProps) {
   const [cart, setCart] = useState<CartItem[]>([])
   const [selectedSizes, setSelectedSizes] = useState<Record<string, string>>({})
   const [openSizeDropdown, setOpenSizeDropdown] = useState<number | null>(null)
@@ -500,7 +501,7 @@ function InteractiveCheckout({ products }: InteractiveCheckoutProps) {
       )}
 
       <div className="flex flex-col md:flex-row gap-6">
-        <div className="flex-1 space-y-3">
+        <div className={`flex-1 space-y-3 ${customProductsContainer || ''}`}>
           {products?.map((product) => (
             <motion.div
               key={product.id}

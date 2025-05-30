@@ -124,17 +124,29 @@ export function ProductsSection({ wears = [] }: ProductsSectionProps) {
       scrollbar-color: rgba(147, 51, 234, 0.8) rgba(24, 24, 27, 0.8) !important;
     }
 
-    .products-container {
-      max-height: 300px !important;
-      overflow-y: scroll !important;
+    /* Style dla kontenera zawierającego listę produktów (bez koszyka) */
+    .products-list-container {
+      max-height: 450px !important;
+      overflow-y: auto !important;
       padding-right: 15px !important;
+      padding-left: 5px !important;
       border: 1px solid rgba(147, 51, 234, 0.3) !important;
       border-radius: 8px !important;
+      margin-bottom: 20px !important;
+      padding-bottom: 10px !important;
+      position: relative !important;
     }
-
-    /* Styl dla wpisów, aby wymusić wysokość */
-    .products-container > div > div:first-child > div {
-      min-height: 80px !important;
+    
+    /* Style dla elementów produktów */
+    .products-list-container > div > div:first-child {
+      margin-bottom: 10px !important;
+    }
+    
+    /* Poprawki dla responsywności */
+    @media (max-width: 768px) {
+      .products-list-container {
+        max-height: 400px !important;
+      }
     }
   `
 
@@ -149,10 +161,7 @@ export function ProductsSection({ wears = [] }: ProductsSectionProps) {
         className="max-w-7xl mx-auto"
       >
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">Shop Collection</h2>
-          <p className="text-zinc-400 max-w-2xl mx-auto mb-8">
-            Browse our latest streetwear drops. Limited quantities available.
-          </p>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">Nasze Produkty</h2>
 
           <div className="max-w-3xl mx-auto mb-12">
             <div className="flex flex-col md:flex-row gap-4 mb-4">
@@ -240,15 +249,11 @@ export function ProductsSection({ wears = [] }: ProductsSectionProps) {
               </button>
             </div>
           ) : (
-            <div className="products-container custom-scrollbar">
-              <InteractiveCheckout products={filteredProducts} />
-              {filteredProducts.length > 5 && (
-                <div className="text-center mt-2">
-                  <p className="text-zinc-400 text-sm">
-                    Showing all {filteredProducts.length} products
-                  </p>
-                </div>
-              )}
+            <div className="relative">
+              <InteractiveCheckout
+                products={filteredProducts}
+                customProductsContainer="products-list-container custom-scrollbar"
+              />
             </div>
           )}
         </div>
